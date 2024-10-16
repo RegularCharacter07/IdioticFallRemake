@@ -8,24 +8,37 @@
     <sounds name="music">
       <sound>sound\mus_logo</sound>
     </sounds>
+    <sounds name="sound">
+      <sound>sound\snd_hit</sound>
+      <sound>sound\snd_fall</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
-    <sprites name="hud">
+    <sprites name="menu">
       <sprite>sprites\spr_logo</sprite>
+      <sprite>sprites\spr_logops4</sprite>
+      <sprite>sprites\spr_logopsv</sprite>
+      <sprite>sprites\spr_logops3</sprite>
+      <sprite>sprites\spr_menu</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_sky</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_controls.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\obj_musicplayer</object>
-    <objects name="hud">
+    <objects name="menu">
+      <object>objects\obj_menu</object>
       <object>objects\obj_logo</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_logo</room>
+    <room>rooms\rm_menu</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -10,7 +10,7 @@
   <bbox_left>59</bbox_left>
   <bbox_right>260</bbox_right>
   <bbox_top>40</bbox_top>
-  <bbox_bottom>165</bbox_bottom>
+  <bbox_bottom>167</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -20,8 +20,8 @@
   <width>320</width>
   <height>180</height>
   <frames>
-    <frame index="0">images\spr_logo_0.png</frame>
-    <frame index="1">images\spr_logo_1.png</frame>
-    <frame index="2">images\spr_logo_2.png</frame>
+    <frame index="0">images\spr_logops4_0.png</frame>
+    <frame index="1">images\spr_logops4_1.png</frame>
+    <frame index="2">images\spr_logops4_2.png</frame>
   </frames>
 </sprite>
