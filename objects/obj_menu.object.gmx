@@ -71,6 +71,16 @@ if option &lt; 0
 {
     option = 2;
 }
+
+if z
+{
+    switch option
+    {
+        case 0:
+        room_goto(rm_game);
+        break;
+    }
+}
 </string>
           </argument>
         </arguments>

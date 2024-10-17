@@ -6,6 +6,7 @@
   <NewExtensions/>
   <sounds name="sound">
     <sounds name="music">
+      <sound>sound\mus_game</sound>
       <sound>sound\mus_logo</sound>
     </sounds>
     <sounds name="sound">
@@ -21,24 +22,48 @@
       <sprite>sprites\spr_logops3</sprite>
       <sprite>sprites\spr_menu</sprite>
     </sprites>
+    <sprites name="game">
+      <sprite>sprites\spr_parachute</sprite>
+      <sprite>sprites\spr_bean</sprite>
+      <sprite>sprites\spr_derpparachute</sprite>
+      <sprite>sprites\spr_derpfart</sprite>
+      <sprite>sprites\spr_derpnormal</sprite>
+      <sprite>sprites\spr_readygo</sprite>
+      <sprite>sprites\spr_plane</sprite>
+    </sprites>
+    <sprites name="debug">
+      <sprite>sprites\spr_block</sprite>
+      <sprite>sprites\spr_block2</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_sky</background>
+    <background>background\bg_skygame</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_controls.gml</script>
   </scripts>
   <objects name="objects">
+    <object>objects\obj_fullscreen</object>
     <object>objects\obj_musicplayer</object>
     <objects name="menu">
       <object>objects\obj_menu</object>
       <object>objects\obj_logo</object>
     </objects>
+    <objects name="game">
+      <object>objects\obj_readygo</object>
+      <object>objects\obj_plane</object>
+      <object>objects\obj_derp</object>
+    </objects>
+    <objects name="debug">
+      <object>objects\obj_block</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_logo</room>
     <room>rooms\rm_menu</room>
+    <room>rooms\rm_game</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

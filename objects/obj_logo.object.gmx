@@ -117,7 +117,7 @@ alarm[2] =  15;
             <kind>1</kind>
             <string>visible = true;
 audio_play_sound(snd_fall,0,false);
-alarm[1] = 45;
+alarm[1] = 30;
 </string>
           </argument>
         </arguments>
