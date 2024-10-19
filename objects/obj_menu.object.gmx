@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>image_speed = 0;
 option = 0;
+vaxispressed = false;
 </string>
           </argument>
         </arguments>
@@ -60,6 +61,29 @@ if down
 if up
 {
     option--;
+}
+
+if vaxis &gt; 0
+{
+    if vaxispressed == false
+    {
+        option++;
+        vaxispressed = true;
+    }
+}
+
+if vaxis &lt; 0
+{
+    if vaxispressed == false
+    {
+        option--;
+        vaxispressed = true;
+    }
+}
+
+if vaxisreleased
+{
+    vaxispressed = false;
 }
 
 if option &gt; 2

@@ -1,0 +1,32 @@
+// 2024-10-19 12:15:28
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+visible = false;
+persistent = true;
+uses_physics = false;
+
+#event step
+scr_controls();
+
+if keyboard_check_pressed(vk_f4)
+{
+    if window_get_fullscreen()
+       {
+       window_set_fullscreen(false);
+       }
+    else
+       {
+       window_set_fullscreen(true);
+       }
+}
+
+if room == rm_game
+{
+    if start
+    {
+        if !instance_exists(obj_pause)
+        {
+            instance_create(view_xview[0],view_yview[0],obj_pause);
+        }
+    }
+}

@@ -1,3 +1,4 @@
+// 2024-10-17 19:37:40
 haxis = gamepad_axis_value(0, gp_axislh);
 vaxis = gamepad_axis_value(0, gp_axislv);
 haxisreleased = (haxis == 0);

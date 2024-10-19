@@ -1,0 +1,67 @@
+// 2024-10-17 19:43:16
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+sprite_index = spr_menu;
+uses_physics = false;
+
+#event create
+image_speed = 0;
+option = 0;
+vaxispressed = false;
+
+#event step
+scr_controls();
+image_index = option;
+
+if down
+{
+    option++;
+}
+
+if up
+{
+    option--;
+}
+
+if vaxis > 0
+{
+    if vaxispressed == false
+    {
+        option++;
+        vaxispressed = true;
+    }
+}
+
+if vaxis < 0
+{
+    if vaxispressed == false
+    {
+        option--;
+        vaxispressed = true;
+    }
+}
+
+if vaxisreleased
+{
+    vaxispressed = false;
+}
+
+if option > 2
+{
+    option = 0;
+}
+
+if option < 0
+{
+    option = 2;
+}
+
+if z
+{
+    switch option
+    {
+        case 0:
+        room_goto(rm_game);
+        break;
+    }
+}

@@ -1,0 +1,12 @@
+// 2024-10-19 14:40:00
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+visible = false;
+uses_physics = false;
+
+#event create
+alarm[0] = random_range(20,40);
+randomize();
+#event alarm0
+instance_create(view_xview[0]+random_range(30,290),view_yview[0]+180,choose(obj_bean,obj_parachute,obj_bird));
+alarm[0] = random_range(20,40);

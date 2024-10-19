@@ -1,0 +1,77 @@
+// 2024-10-19 09:29:50
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+sprite_index = spr_logo;
+uses_physics = false;
+
+#event create
+image_speed = 0;
+image_index = 0;
+visible = false
+alarm[0] = 10;
+ready = false;
+
+switch (os_type)
+{
+    case os_ps4:
+    sprite_index = spr_logops4;
+    break;
+    case os_psvita:
+    sprite_index = spr_logopsv;
+    break;
+    case os_ps3:
+    sprite_index = spr_logops3;
+    break;
+}
+
+#event alarm0
+if ready == false
+{
+    visible = true;
+    audio_play_sound(snd_fall,0,false);
+    alarm[1] = 30;
+}
+
+#event alarm1
+if ready == false
+{
+    image_index = 1;
+    audio_play_sound(snd_hit,0,false);
+    alarm[2] =  15;
+}
+
+#event alarm2
+if ready == false
+{
+    image_index = 2;
+    audio_play_sound(mus_logo,1,true);
+    ready = true;
+}
+
+#event step
+scr_controls();
+
+if z
+{
+    if ready == false
+    {
+        audio_stop_all();
+        visible = true;
+        image_index = 2;
+        audio_play_sound(mus_logo,1,true);
+        ready = true;
+    }
+}
+
+if ready == true
+{
+    if start
+    {
+        room_goto(rm_menu);
+    }   
+     
+    if !instance_exists(obj_musicplayer)
+    {
+        instance_create(0,0,obj_musicplayer);
+    }
+}

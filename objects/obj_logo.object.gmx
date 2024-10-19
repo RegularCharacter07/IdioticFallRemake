@@ -34,7 +34,7 @@ ready = false;
 switch (os_type)
 {
     case os_ps4:
-    sprite_index = spr_logops3;
+    sprite_index = spr_logops4;
     break;
     case os_psvita:
     sprite_index = spr_logopsv;
@@ -65,9 +65,12 @@ switch (os_type)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ready = true;
-image_index = 2;
-audio_play_sound(mus_logo,1,true);
+            <string>if ready == false
+{
+    image_index = 2;
+    audio_play_sound(mus_logo,1,true);
+    ready = true;
+}
 </string>
           </argument>
         </arguments>
@@ -90,9 +93,12 @@ audio_play_sound(mus_logo,1,true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_index = 1;
-audio_play_sound(snd_hit,0,false);
-alarm[2] =  15;
+            <string>if ready == false
+{
+    image_index = 1;
+    audio_play_sound(snd_hit,0,false);
+    alarm[2] =  15;
+}
 </string>
           </argument>
         </arguments>
@@ -115,9 +121,12 @@ alarm[2] =  15;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>visible = true;
-audio_play_sound(snd_fall,0,false);
-alarm[1] = 30;
+            <string>if ready == false
+{
+    visible = true;
+    audio_play_sound(snd_fall,0,false);
+    alarm[1] = 30;
+}
 </string>
           </argument>
         </arguments>
@@ -141,6 +150,18 @@ alarm[1] = 30;
           <argument>
             <kind>1</kind>
             <string>scr_controls();
+
+if z
+{
+    if ready == false
+    {
+        audio_stop_all();
+        visible = true;
+        image_index = 2;
+        audio_play_sound(mus_logo,1,true);
+        ready = true;
+    }
+}
 
 if ready == true
 {

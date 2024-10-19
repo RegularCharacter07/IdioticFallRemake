@@ -1,0 +1,29 @@
+// 2024-10-19 09:46:54
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+uses_physics = false;
+
+#event create
+points = 0;
+startgame = false;
+
+#event step
+if room == rm_game
+{
+    startgame = true;
+}
+else
+{
+    startgame = false;
+}
+
+if startgame == true
+{
+    points += 1;
+}
+
+#event draw
+draw_set_font(fnt_normal);
+draw_set_color(c_black);
+draw_text(view_xview[0],view_yview[0],"Points: ");
+draw_text(view_xview[0]+80,view_yview[0],points)

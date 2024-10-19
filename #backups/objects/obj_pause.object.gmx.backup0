@@ -1,0 +1,26 @@
+// 2024-10-19 12:13:32
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+sprite_index = spr_pause;
+uses_physics = false;
+
+#event create
+paused = true;
+#event step
+scr_controls();
+
+if paused == true
+{
+    instance_deactivate_all(true)
+}
+else
+{
+    instance_activate_all();
+    instance_destroy(self);
+}
+
+if start
+{
+    paused = false;
+}
+

@@ -25,7 +25,43 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>fallspeed = 4;
+            <string>enum playerstate
+{
+    falling,
+    fart,
+    parachute,
+    hit
+}
+
+state = playerstate.falling;
+fallspeed = 4;
+fartspeed = 4;
+fartplayed = false;
+parachuteplayed = false;
+hitplayed = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>state = playerstate.falling;
 </string>
           </argument>
         </arguments>
@@ -50,17 +86,143 @@
             <kind>1</kind>
             <string>scr_controls();
 
-y += fallspeed
-
-if left
+switch state
 {
-    x -= 4;
+    case playerstate.falling:
+    y += fallspeed;
+    sprite_index = spr_derpnormal;
+    break;
+    case playerstate.fart:
+    if !position_meeting(x,y-fartspeed,obj_collision)
+    {
+        y -= fartspeed;
+    }
+    sprite_index = spr_derpfart;
+    if fartplayed == false
+    {
+        audio_play_sound(snd_fart,0,false);
+        alarm[0] = 45;
+        obj_points.points += 25;
+        fartplayed = true;
+    }
+    break;
+    case playerstate.parachute:
+    y += fallspeed / 2;
+    sprite_index = spr_derpparachute
+    if parachuteplayed == false
+    {
+        audio_play_sound(snd_parachute,0,false);
+        alarm[0] = 45;
+        obj_points.points += 25;
+        parachuteplayed = true;
+    }
+    break;
+    case playerstate.hit:
+    y += fallspeed;
+    sprite_index = spr_derphit
+    if hitplayed == false
+    {
+        image_blend = c_red;
+        audio_play_sound(snd_hurt,0,false);
+        alarm[0] = 30;
+        obj_points.points -= 25;
+        hitplayed = true;
+    }
+    break;
 }
 
-if right
+if state != playerstate.hit
 {
-    x += 4;
+    if !position_meeting(x-4,y,obj_collision)
+    {
+        if left or haxis &lt; 0
+        {
+            x -= 4;
+        }
+    }
+    
+    if !position_meeting(x+4,y,obj_collision)
+    {
+        if right or haxis &gt; 0
+        {
+            x += 4;
+        }
+    }
+    
+    image_blend = c_white;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_parachute">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>state = playerstate.parachute;
+parachuteplayed = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_bean">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>state = playerstate.fart;
+fartplayed = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_bird">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>state = playerstate.hit;
+hitplayed = false;
 </string>
           </argument>
         </arguments>

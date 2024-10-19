@@ -12,6 +12,9 @@
     <sounds name="sound">
       <sound>sound\snd_hit</sound>
       <sound>sound\snd_fall</sound>
+      <sound>sound\snd_parachute</sound>
+      <sound>sound\snd_fart</sound>
+      <sound>sound\snd_hurt</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -24,12 +27,16 @@
     </sprites>
     <sprites name="game">
       <sprite>sprites\spr_parachute</sprite>
+      <sprite>sprites\spr_bird</sprite>
       <sprite>sprites\spr_bean</sprite>
       <sprite>sprites\spr_derpparachute</sprite>
       <sprite>sprites\spr_derpfart</sprite>
+      <sprite>sprites\spr_derphit</sprite>
       <sprite>sprites\spr_derpnormal</sprite>
       <sprite>sprites\spr_readygo</sprite>
       <sprite>sprites\spr_plane</sprite>
+      <sprite>sprites\spr_pause</sprite>
+      <sprite>sprites\spr_grass</sprite>
     </sprites>
     <sprites name="debug">
       <sprite>sprites\spr_block</sprite>
@@ -44,6 +51,9 @@
   <scripts name="scripts">
     <script>scripts\scr_controls.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_normal</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_fullscreen</object>
     <object>objects\obj_musicplayer</object>
@@ -55,9 +65,16 @@
       <object>objects\obj_readygo</object>
       <object>objects\obj_plane</object>
       <object>objects\obj_derp</object>
+      <object>objects\obj_bird</object>
+      <object>objects\obj_bean</object>
+      <object>objects\obj_parachute</object>
+      <object>objects\obj_pause</object>
+      <object>objects\obj_points</object>
+      <object>objects\obj_spawner</object>
     </objects>
     <objects name="debug">
       <object>objects\obj_block</object>
+      <object>objects\obj_collision</object>
     </objects>
   </objects>
   <rooms name="rooms">

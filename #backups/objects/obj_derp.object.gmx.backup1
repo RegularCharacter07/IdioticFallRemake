@@ -1,0 +1,105 @@
+// 2024-10-19 14:35:51
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+sprite_index = spr_derpnormal;
+uses_physics = false;
+
+#event create
+enum playerstate
+{
+    falling,
+    fart,
+    parachute,
+    hit
+}
+
+state = playerstate.falling;
+fallspeed = 4;
+fartspeed = 4;
+fartplayed = false;
+parachuteplayed = false;
+hitplayed = false;
+
+#event alarm0
+state = playerstate.falling;
+
+#event step
+scr_controls();
+
+switch state
+{
+    case playerstate.falling:
+    y += fallspeed;
+    sprite_index = spr_derpnormal;
+    break;
+    case playerstate.fart:
+    if !position_meeting(x,y-fartspeed,obj_collision)
+    {
+        y -= fartspeed;
+    }
+    sprite_index = spr_derpfart;
+    if fartplayed == false
+    {
+        audio_play_sound(snd_fart,0,false);
+        alarm[0] = 45;
+        obj_points.points += 25;
+        fartplayed = true;
+    }
+    break;
+    case playerstate.parachute:
+    y += fallspeed / 2;
+    sprite_index = spr_derpparachute
+    if parachuteplayed == false
+    {
+        audio_play_sound(snd_parachute,0,false);
+        alarm[0] = 45;
+        obj_points.points += 25;
+        parachuteplayed = true;
+    }
+    break;
+    case playerstate.hit:
+    y += fallspeed;
+    sprite_index = spr_derphit
+    if hitplayed == false
+    {
+        image_blend = c_red;
+        audio_play_sound(snd_hurt,0,false);
+        alarm[0] = 30;
+        obj_points.points -= 25;
+        hitplayed = true;
+    }
+    break;
+}
+
+if state != playerstate.hit
+{
+    if !position_meeting(x-4,y,obj_collision)
+    {
+        if left or haxis < 0
+        {
+            x -= 4;
+        }
+    }
+    
+    if !position_meeting(x+4,y,obj_collision)
+    {
+        if right or haxis > 0
+        {
+            x += 4;
+        }
+    }
+    
+    image_blend = c_white;
+}
+
+#event collision:obj_bird
+state = playerstate.hit;
+hitplayed = false;
+
+#event collision:obj_bean
+state = playerstate.fart;
+fartplayed = false;
+
+#event collision:obj_parachute
+state = playerstate.parachute;
+parachuteplayed = false;

@@ -1,0 +1,24 @@
+// 2024-10-19 09:39:30
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+sprite_index = spr_plane;
+uses_physics = false;
+
+#event create
+gamestarted = false;
+
+#event alarm0
+#action action_kill_object
+
+#event step
+x -= 4;
+
+#event collision:obj_block
+if gamestarted == false
+{
+    instance_create(x,y,obj_derp);
+    instance_create(x,y,obj_points);
+    obj_readygo.go = true;
+    alarm[0] = 240;
+    gamestarted = true;
+}
