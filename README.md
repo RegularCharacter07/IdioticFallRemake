@@ -14,3 +14,4 @@ This is the remake of the game I made for the Jame Game #29
 - Dizzy Crow: sound
 - YourPalRob: sound
 - jsfxr: sound
+- Li: playstation ports
