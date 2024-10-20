@@ -1,0 +1,13 @@
+// 2024-10-19 17:44:14
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+visible = false;
+uses_physics = false;
+
+#event create
+audio_play_sound(snd_hit,0,false);
+#event step
+if !audio_is_playing(snd_hit)
+{
+    room_goto(rm_gameover);
+}

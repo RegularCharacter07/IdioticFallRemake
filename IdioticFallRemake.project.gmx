@@ -8,6 +8,7 @@
     <sounds name="music">
       <sound>sound\mus_game</sound>
       <sound>sound\mus_logo</sound>
+      <sound>sound\mus_gameover</sound>
     </sounds>
     <sounds name="sound">
       <sound>sound\snd_hit</sound>
@@ -24,6 +25,8 @@
       <sprite>sprites\spr_logopsv</sprite>
       <sprite>sprites\spr_logops3</sprite>
       <sprite>sprites\spr_menu</sprite>
+      <sprite>sprites\spr_gameover</sprite>
+      <sprite>sprites\spr_score</sprite>
     </sprites>
     <sprites name="game">
       <sprite>sprites\spr_parachute</sprite>
@@ -44,6 +47,7 @@
     </sprites>
   </sprites>
   <backgrounds name="background">
+    <background>background\bg_hit</background>
     <background>background\bg_sky</background>
     <background>background\bg_skygame</background>
   </backgrounds>
@@ -60,14 +64,21 @@
     <objects name="menu">
       <object>objects\obj_menu</object>
       <object>objects\obj_logo</object>
+      <object>objects\obj_logo_nointro</object>
+      <object>objects\obj_hit</object>
+      <object>objects\obj_score</object>
+      <object>objects\obj_scorebg</object>
+      <object>objects\obj_gameover</object>
     </objects>
     <objects name="game">
       <object>objects\obj_readygo</object>
       <object>objects\obj_plane</object>
+      <object>objects\obj_grass</object>
       <object>objects\obj_derp</object>
       <object>objects\obj_bird</object>
       <object>objects\obj_bean</object>
       <object>objects\obj_parachute</object>
+      <object>objects\obj_vars</object>
       <object>objects\obj_pause</object>
       <object>objects\obj_points</object>
       <object>objects\obj_spawner</object>
@@ -79,7 +90,11 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_logo</room>
+    <room>rooms\rm_logo_nointro</room>
     <room>rooms\rm_menu</room>
+    <room>rooms\rm_gameover</room>
+    <room>rooms\rm_score</room>
+    <room>rooms\rm_hit</room>
     <room>rooms\rm_game</room>
   </rooms>
   <help>

@@ -1,0 +1,8 @@
+// 2024-10-19 16:05:46
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+sprite_index = spr_grass;
+uses_physics = false;
+
+#event collision:obj_derp
+room_goto(rm_gameover);

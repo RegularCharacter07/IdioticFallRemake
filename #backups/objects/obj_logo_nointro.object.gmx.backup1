@@ -1,0 +1,31 @@
+// 2024-10-19 18:00:06
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+sprite_index = spr_logo;
+uses_physics = false;
+
+#event create
+image_speed = 0;
+image_index = 2;
+visible = true;
+
+switch (os_type)
+{
+    case os_ps4:
+    sprite_index = spr_logops4;
+    break;
+    case os_psvita:
+    sprite_index = spr_logopsv;
+    break;
+    case os_ps3:
+    sprite_index = spr_logops3;
+    break;
+}
+
+#event step
+scr_controls();
+
+if start
+{
+    room_goto(rm_menu);
+}

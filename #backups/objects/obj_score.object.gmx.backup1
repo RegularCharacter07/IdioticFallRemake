@@ -1,0 +1,9 @@
+// 2024-10-19 17:49:38
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+uses_physics = false;
+
+#event draw
+draw_set_font(fnt_normal);
+draw_set_color(c_black);
+draw_text(x,y,obj_vars.points);

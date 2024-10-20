@@ -1,0 +1,23 @@
+// 2024-10-19 17:59:04
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+visible = false;
+persistent = true;
+uses_physics = false;
+
+#event other_room_start
+switch room
+{
+    case rm_game:
+    audio_stop_all();
+    audio_play_sound(mus_game,1,true);
+    break;
+    case rm_gameover:
+    audio_stop_all();
+    audio_play_sound(mus_gameover,1,true);
+    break;
+    case rm_logo_nointro:
+    audio_stop_all();
+    audio_play_sound(mus_logo,1,true);
+    break;
+}

@@ -1,0 +1,21 @@
+// 2024-10-19 17:45:55
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+sprite_index = spr_score;
+uses_physics = false;
+
+#event create
+image_speed = 0;
+
+switch (os_type)
+{
+    case os_ps4:
+    image_index = 1;
+    break;
+    case os_psvita:
+    image_index = 2;
+    break;
+    case os_ps3:
+    image_index = 1;
+    break;
+}

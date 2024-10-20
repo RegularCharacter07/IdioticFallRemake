@@ -1,0 +1,20 @@
+// 2024-10-19 17:54:25
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+visible = false;
+persistent = true;
+uses_physics = false;
+
+#event create
+points = 0;
+
+#event step
+if instance_exists(obj_points)
+{
+    points = obj_points.points;
+}
+
+if room != rm_game and room != rm_hit and room != rm_gameover and room != rm_score
+{
+    instance_destroy;
+}

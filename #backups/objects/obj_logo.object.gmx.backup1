@@ -1,4 +1,4 @@
-// 2024-10-19 09:29:45
+// 2024-10-19 17:22:25
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = spr_logo;
@@ -55,10 +55,10 @@ if z
 {
     if ready == false
     {
-        audio_stop_all;
+        audio_stop_all();
         visible = true;
         image_index = 2;
-        audio_play_sound(mus_logo,1,true);
+        audio_play_sound(mus_logo,true);
         ready = true;
     }
 }

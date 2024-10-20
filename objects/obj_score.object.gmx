@@ -2,13 +2,13 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="0">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,17 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check_pressed(vk_f4)
-{
-    if window_get_fullscreen()
-       {
-       window_set_fullscreen(false);
-       }
-    else
-       {
-       window_set_fullscreen(true);
-       }
-}
+            <string>draw_set_color(c_white);
+draw_set_font(fnt_normal);
+draw_text(x,y,obj_vars.points);
 </string>
           </argument>
         </arguments>
