@@ -48,7 +48,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(obj_points)
+            <string>scr_controls();
+
+if instance_exists(obj_points)
 {
     points = obj_points.points;
 }
@@ -56,6 +58,14 @@
 if room != rm_game and room != rm_hit and room != rm_gameover and room != rm_score
 {
     instance_destroy();
+}
+
+if start
+{
+    if !instance_exists(obj_pause)
+    {
+        instance_create(view_xview[0],view_yview[0],obj_pause);
+    }
 }
 </string>
           </argument>

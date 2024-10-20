@@ -102,7 +102,7 @@ switch state
     {
         audio_play_sound(snd_fart,0,false);
         alarm[0] = 45;
-        obj_points.points += 25;
+        obj_points.points += 100;
         fartplayed = true;
     }
     break;
@@ -113,7 +113,7 @@ switch state
     {
         audio_play_sound(snd_parachute,0,false);
         alarm[0] = 45;
-        obj_points.points += 25;
+        obj_points.points += 50;
         parachuteplayed = true;
     }
     break;
@@ -125,7 +125,7 @@ switch state
         image_blend = c_red;
         audio_play_sound(snd_hurt,0,false);
         alarm[0] = 30;
-        obj_points.points -= 25;
+        obj_points.points -= 50;
         hitplayed = true;
     }
     break;

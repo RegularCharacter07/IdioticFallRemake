@@ -25,7 +25,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>paused = true;
+image_speed = 0;
+
+switch os_type
+{
+    case os_psvita:
+    image_index = 1;
+    break;
+    case os_ps3:
+    image_index = 2;
+    break;
+    case os_ps4:
+    image_index = 2;
+    break;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -47,7 +62,29 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>scr_controls();
+
+if paused == true
+{
+    instance_deactivate_all(true);
+}
+else
+{
+    instance_activate_all();
+    instance_destroy();
+}
+
+if start
+{
+    paused = false;
+}
+
+if x_key
+{
+    instance_activate_all();
+    room_goto(rm_logo_nointro);
+}
+</string>
           </argument>
         </arguments>
       </action>

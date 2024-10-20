@@ -20,6 +20,9 @@
   </sounds>
   <sprites name="sprites">
     <sprites name="menu">
+      <sprite>sprites\spr_guide</sprite>
+      <sprite>sprites\spr_guidepsv</sprite>
+      <sprite>sprites\spr_guideps</sprite>
       <sprite>sprites\spr_logo</sprite>
       <sprite>sprites\spr_logops4</sprite>
       <sprite>sprites\spr_logopsv</sprite>
@@ -27,6 +30,8 @@
       <sprite>sprites\spr_menu</sprite>
       <sprite>sprites\spr_gameover</sprite>
       <sprite>sprites\spr_score</sprite>
+      <sprite>sprites\spr_credits</sprite>
+      <sprite>sprites\spr_menucontrols</sprite>
     </sprites>
     <sprites name="game">
       <sprite>sprites\spr_parachute</sprite>
@@ -62,6 +67,7 @@
     <object>objects\obj_fullscreen</object>
     <object>objects\obj_musicplayer</object>
     <objects name="menu">
+      <object>objects\obj_menucontrols</object>
       <object>objects\obj_menu</object>
       <object>objects\obj_logo</object>
       <object>objects\obj_logo_nointro</object>
@@ -69,6 +75,8 @@
       <object>objects\obj_score</object>
       <object>objects\obj_scorebg</object>
       <object>objects\obj_gameover</object>
+      <object>objects\obj_credits</object>
+      <object>objects\obj_guide</object>
     </objects>
     <objects name="game">
       <object>objects\obj_readygo</object>
@@ -91,6 +99,8 @@
   <rooms name="rooms">
     <room>rooms\rm_logo</room>
     <room>rooms\rm_logo_nointro</room>
+    <room>rooms\rm_guide</room>
+    <room>rooms\rm_credits</room>
     <room>rooms\rm_menu</room>
     <room>rooms\rm_gameover</room>
     <room>rooms\rm_score</room>
