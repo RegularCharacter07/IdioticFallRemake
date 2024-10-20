@@ -1,5 +1,6 @@
 haxis = gamepad_axis_value(0, gp_axislh);
 vaxis = gamepad_axis_value(0, gp_axislv);
+gamepad_set_axis_deadzone(0,0.6);
 haxisreleased = (haxis == 0);
 vaxisreleased = (vaxis == 0);
 up = keyboard_check_pressed(vk_up) or gamepad_button_check_pressed(0,gp_padu);
