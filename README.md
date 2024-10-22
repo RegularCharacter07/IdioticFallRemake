@@ -8,6 +8,7 @@ This is the remake of the game I made for the Jame Game #29
 
 - Regular Character: art and code
 - Kenney: font
+- Clint Bellanger: font
 - Zane Little: music
 - SketchyLogic: music
 - 3DPyramid: music
