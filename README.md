@@ -1,7 +1,7 @@
 
 # Idiotic Fall Remake
 
-This is the remake of the game I made for the Jame Game #29
+This is the remake of the game I made for the Jame Gam #29
 
 
 ## Credits
